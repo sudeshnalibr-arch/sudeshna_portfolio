@@ -1,26 +1,74 @@
+
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #080B16;
+  --foreground: #F8FAFC;
+  --primary: #8B5CF6;
+  --secondary: #3B82F6;
+  --muted: #94A3B8;
+  --surface: #111729;
+  --border: rgba(148, 163, 184, 0.15);
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+* {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-padding-top: 90px;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+}
+
+::selection {
+  background: #8B5CF6;
+  color: white;
+}
+
+.gradient-text {
+  background: linear-gradient(
+    90deg,
+    #A78BFA,
+    #60A5FA
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.gradient-border {
+  border: 1px solid transparent;
+  background:
+    linear-gradient(#111729, #111729) padding-box,
+    linear-gradient(135deg, #8B5CF6, #3B82F6) border-box;
+}
+
+.section-container {
+  width: min(1120px, calc(100% - 40px));
+  margin-inline: auto;
+}
+
+.section-padding {
+  padding-block: 100px;
+}
+
+.glow {
+  box-shadow: 0 0 80px rgba(139, 92, 246, 0.12);
+}
+
+@media (max-width: 640px) {
+  .section-padding {
+    padding-block: 65px;
+  }
+
+  .section-container {
+    width: min(100% - 32px, 1120px);
+  }
 }
